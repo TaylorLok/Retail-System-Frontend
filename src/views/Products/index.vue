@@ -15,7 +15,7 @@
                         <th>Product Name</th>
                         <th>Price</th>
                         <th>Stock</th>
-                        <!-- <th>Desc</th> -->
+                        <th>Description</th>
                         <th>Created At</th>
                         <th>Actions</th>
                     </tr>
@@ -27,8 +27,8 @@
                         <td>{{ product.name }}</td>
                         <td>{{ product.price }}</td>
                         <td>{{ product.stock }}</td>
-                        <!-- <td>{{ product.description }}</td> -->
-                        <td>{{ product.created_at }}</td>
+                        <td>{{ product.description }}</td>
+                        <td>{{ formatDate(product.created_at) }}</td>
                         <td>
                             <RouterLink :to="{ path: '/product/'+product.id+'/edit'}" class="btn btn-success" style="margin-right: 5px;">
                                 Edit 
@@ -71,6 +71,11 @@
 
                     //console.log(this.products)
                 })
+            },
+
+            formatDate(dateTime) {
+            const date = new Date(dateTime);
+            return `${date.toISOString().slice(0, 19).replace("T", " ")}`;
             },
 
             deleteProduct(productId){
