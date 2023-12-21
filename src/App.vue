@@ -23,6 +23,9 @@ import Footer from '@/components/Footer.vue';
               <li class="nav-item">
                 <RouterLink class="nav-link" to="/products">Products</RouterLink>
               </li>
+              <li class="nav-item">
+                <RouterLink class="nav-link" to="/category">Categories</RouterLink>
+              </li>
             </ul>
           </div>
         </div>
