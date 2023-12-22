@@ -8,11 +8,10 @@
   
   <style scoped>
   .footer {
-    position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: #86d169;
-  padding: 20px 0;
-  text-align: center;
+    bottom: 0;
+    width: 100%;
+    background-color: #86d169;
+    padding: 20px 0;
+    text-align: center;
   }
   </style>
