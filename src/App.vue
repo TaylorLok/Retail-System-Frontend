@@ -27,6 +27,9 @@ import Footer from '@/components/Footer.vue';
               <li class="nav-item">
                 <RouterLink class="nav-link" to="/category">Categories</RouterLink>
               </li>
+              <li class="nav-item" v-if="isLoggedIn && $store.state.user">
+                  <p class="nav-link">{{ $store.state.user.name }}</p>
+              </li>
               <li class="nav-item" v-if="!isLoggedIn">
                 <RouterLink class="nav-link" to="/register">Registration</RouterLink>
               </li>
@@ -57,7 +60,7 @@ export default {
   },
   methods: {
     ...mapActions(['logout'])
-  }
+  },
 }
 
 </script>

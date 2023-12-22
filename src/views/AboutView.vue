@@ -7,8 +7,7 @@
 
       <div class="card-body">
         <p>
-          Welcome to <b>RetailerX</b>, where innovation meets expertise. Founded by <b>Taylor Lokombe</b>, a qualified web and software developer with over three years of experience,<br>
-           our team is driven by a singular mission – to empower small businesses with cutting-edge technology to manage their business.<br>
+          Welcome to <b>RetailerX</b>, where innovation meets expertise. Founded by <b>Taylor Lokombe</b> and <b>Jody Heideman</b>, qualified web and software developer with over three years of experience,our team is driven by a singular mission – to empower small businesses with cutting-edge technology to manage their business.<br>
         </p>
 
         <p>
