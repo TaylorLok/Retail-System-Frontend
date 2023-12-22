@@ -62,33 +62,31 @@
                 var mythis = this;
                 const response = await axios.post('http://localhost:8000/api/register', this.user);
                 console.log(response);
-                if(response.data.status === 'success')
-                {
-                    localStorage.setItem('token', response.data.token);//store token in local storage for session management
-                    this.$store.commit('LOGIN');//store token in vuex store for global access
+                if (response.data && response.data.token) {
+                    localStorage.setItem('token', response.data.token); // store token in local storage for session management
+                    this.$store.commit('LOGIN'); // store token in vuex store for global access
                     this.$router.push({ name: 'home' });
-                    
-                }
-                else
-                {
-                    this.errorList = response.data.error;
+                } else {
+                    console.log('Unexpected response data:', response.data);
                 }
             }
             catch( error) 
             {
-                console.log(error.response.status);
+                console.log('Error during login:', error);
 
-                if (error.response) 
-                {
-                    if(error.response.status == 422){
+                if (error.response) {
+                    if (error.response.status === 422) {
+
                         mythis.errorList = error.response.data.error;
+
+                    }else {
+                        // Handle other error cases
+                        this.errorList = ['An error occurred. Please try again.'];
                     }
-                } 
-                else if (error.request) 
-                {
-                    console.log(error.request);
-                } 
-    
+                }
+                else if (error.request) {
+                    console.log('Error in request:', error.request);
+                }
             }
             finally
             {
