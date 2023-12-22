@@ -3,6 +3,9 @@ import HomeView from '../views/HomeView.vue'
 import ProductView from '../views/Products/index.vue'
 import ProductCreateView from '../views/Products/create.vue'
 import EditView from '../views/Products/edit.vue'
+import CategoryView from '../views/Category/Index.vue'
+import CategoryCreateView from '../views/Category/Create.vue'
+import CategoryEditView from '../views/Category/Edit.vue'
 import registerView from '../views/Registration.vue'
 import loginView from '../views/Login.vue'
 
@@ -35,6 +38,21 @@ const router = createRouter({
       path: '/product/:id/edit',
       name: 'productEdit',
       component: EditView
+    },
+    {
+      path: '/category',
+      name: 'category',
+      component: CategoryView
+    },
+    {
+      path: '/category/create',
+      name: 'categoryCreate',
+      component: CategoryCreateView
+    },
+    {
+      path: '/category/:id/edit',
+      name: 'categoryEdit',
+      component: CategoryEditView
     },
     {
       path: '/register',
