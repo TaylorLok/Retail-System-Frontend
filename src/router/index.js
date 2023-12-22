@@ -74,8 +74,8 @@ router.beforeEach((to, from, next) => {
 
   const isAuthenticated = !!localStorage.getItem('token');
 
-    console.log('Navigating from:', from.name);
-    console.log('Navigating to:', to.name);
+    // console.log('Navigating from:', from.name);
+    // console.log('Navigating to:', to.name);
     console.log('Is authenticated:', isAuthenticated);
 
     if(!to.meta.public && !isAuthenticated)

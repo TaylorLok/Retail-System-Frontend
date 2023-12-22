@@ -48,9 +48,14 @@
             console.log(response);
 
             if (response.data && response.data.token) {
-                localStorage.setItem('token', response.data.token); // store token in local storage for session management
+                // Extract user information from the response
+                const { user, token } = response.data;
+                console.log('User info:', user);
+                localStorage.setItem('token', token); // store token in local storage for session management
                 console.log('Token saved in localStorage:', localStorage.getItem('token'));
-                this.$store.commit('LOGIN'); // store token in vuex store for global access
+                //adding username to be shown once is loggedin
+                this.$store.commit('LOGIN', { user });
+                console.log('User info saved in vuex store:', this.$store.state.user);
                 this.$router.push({ name: 'home' });
             } else {
                 console.log('Unexpected response data:', response.data);
