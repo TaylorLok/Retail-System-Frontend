@@ -13,6 +13,7 @@
                         <th>ID</th>
                         <th>SKU</th>
                         <th>Product Name</th>
+                        <th>Category</th>
                         <th>Price</th>
                         <th>Stock</th>
                         <th>Description</th>
@@ -25,6 +26,7 @@
                         <td>{{ product.id }}</td>
                         <td>{{ product.sku }}</td>
                         <td>{{ product.name }}</td>
+                        <td>{{ product.category ? product.category.name : 'N/A' }}</td>
                         <td>{{ product.price }}</td>
                         <td>{{ product.stock }}</td>
                         <td>{{ product.description }}</td>
